@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: © 2025 NTY.studio
+// SPDX-FileCopyrightText: © 2025 NTY.studio
 // SPDX-License-Identifier: MIT
 
 #include "CTRLThumbnailRenderer.h"
@@ -27,7 +27,7 @@ void UCTRLThumbnailSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Collection.InitializeDependency<UContentBrowserDataSubsystem>();
 	Super::Initialize(Collection);
-	FCoreDelegates::OnPostEngineInit.AddUObject(this, &ThisClass::PostEngineInit);
+	FCoreDelegates::GetOnPostEngineInit().AddUObject(this, &ThisClass::PostEngineInit);
 }
 
 void UCTRLThumbnailSubsystem::RegisterThumbnailRenderers()

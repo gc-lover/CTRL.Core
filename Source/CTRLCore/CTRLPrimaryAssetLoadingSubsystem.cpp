@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: © 2025 NTY.studio
+// SPDX-FileCopyrightText: © 2025 NTY.studio
 // SPDX-License-Identifier: MIT
 
 #include "CTRLCore/CTRLPrimaryAssetLoadingSubsystem.h"
@@ -43,7 +43,7 @@ void UCTRLPrimaryAssetLoadingSubsystem::Initialize(FSubsystemCollectionBase& Col
 	Super::Initialize(Collection);
 
 	// This should always happen before PostEngineInit
-	FCoreDelegates::OnPostEngineInit.AddUObject(this, &ThisClass::PostEngineInit);
+	FCoreDelegates::GetOnPostEngineInit().AddUObject(this, &ThisClass::PostEngineInit);
 
 #if WITH_EDITOR
 	if (GIsEditor)
